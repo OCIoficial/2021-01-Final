@@ -1,30 +1,68 @@
 \documentclass{oci}
 \usepackage[utf8]{inputenc}
 \usepackage{lipsum}
+\usepackage{xcolor}
 
-\title{Ejemplo}
+\title{El cifrado de César}
+\newcommand{\todo}[1]{{\color{red}{#1}}}
 
 \begin{document}
 \begin{problemDescription}
-\lipsum[1-3]
+César, ya cansado de que no lo incluyan en los bailes, ha decidido formar un club secreto
+donde ahora él tendrá la oportunidad de excluir a todas las personas que lo han discriminado por
+tantos años.
+Para excluir completamente a quienes no pertenecen al club, César ha decido que toda comunicación
+dentro del club debe ser encriptada.
+
+César ha diseñado un sistema muy simple para encriptar sus mensajes.
+En primer lugar, solo encriptará mensajes conformados por letras mayúsculas del alfabeto
+inglés, es decir, los mensajes no contendrán tildes ni la letra Ñ.
+Los mensajes pueden contener espacios, pero estos no deben ser modificados en el proceso de
+encriptación.
+Para encriptar el mensaje, César elige un número $k$ entre 0 y 25 que será utilizado como llave.
+Posteriormente, cada letra del mensaje es reemplazada por la letra del abecedario que se
+encuentra $k$ posiciones más adelante.
+En caso de llegar al final del abecedario se debe continuar contando desde la $A$.
+Específicamente, si enumeramos las letras del abecedario entre 0 y 25, la letra $i$ debe ser
+reemplazada por la letra $(i+k)\% 26$.
+
+Como ejemplo considera el siguiente mensaje
+\begin{center}
+  \texttt{SE HA DE ATREVER A ESCRIBIR CON PLUMA DE AVESTRUZ}
+\end{center}
+Para el $k=5$ el mensaje encriptado sería:
+\begin{center}
+  \texttt{XJ MF IJ FYWJAJW F JXHWNGNW HTS UQZRF IJ FAJXYWZE}
+\end{center}
+
 \end{problemDescription}
 
+\section*{Tarea y puntaje}
+Dado un mensaje encriptado con el método de César tu tarea es determinar la llave que fue
+utilizada para encriptarlo.
+Tu solución será probada con distintos mensajes y obtendrás puntaje proporcional a la cantidad
+de casos correctos siendo 100 el puntaje máximo.
+Todos los mensajes corresponderán a fragmentos del libro Don Quijote de la Macha, escrito
+por Miguel de Cervantes, a los cuales se les han eliminado los tildes y signos de puntuación.
+
+Para resolver esta tarea puede serte útil la siguiente información de la frecuencia de aparición
+\todo{fill with stats}
+
 \begin{inputDescription}
-\lipsum[1]
+    La entrada está descrita en dos líneas.
+    La primera contiene un entero $N$ correspondiente a la cantidad de caracteres en el mensaje
+    (incluyendo espacios).
+    La segunda línea contiene una cadena de texto conteniendo solo espacios o letras mayúsculas
+    del alfabeto inglés.
+    La cadena de texto corresponderá siempre a un mensaje que fue encriptado utilizando el método
+    descrito en el enunciado.
+
 \end{inputDescription}
 
 \begin{outputDescription}
-\lipsum[1]
+    La salida debe contener un único entero entre 0 y 25 correspondiente a la llave que
+    fue utilizada para encriptar el mensaje.
 \end{outputDescription}
-
-\begin{scoreDescription}
-  \subtask{20}
-  Descripción Subtarea1
-  \subtask{30}
-  Descripción Subtarea2
-  \subtask{50}
-  Descripción Subtarea3
-\end{scoreDescription}
 
 \begin{sampleDescription}
 \sampleIO{sample-1}
