@@ -1,0 +1,304 @@
+\documentclass{oci}
+\usepackage[utf8]{inputenc}
+\usepackage{lipsum}
+\usepackage{tikz}
+\usepackage{relsize}
+\usepackage{calc}
+\usepackage{xcolor}
+\usetikzlibrary{shapes.geometric, fadings}
+
+\newcommand{\todo}[1]{{\color{red} #1}}
+
+
+\pgfdeclareradialshading{ring}{\pgfpoint{0cm}{0cm}}%
+{rgb(0cm)=(0,0,0);
+rgb(0.6cm)=(0,0,0);
+rgb(0.75cm)=(1,1,1);
+rgb(1cm)=(1, 1, 1)}
+
+\begin{tikzfadingfrompicture}[name=ring]
+  \fill[shading=ring] (0, 0) circle (1);
+\end{tikzfadingfrompicture}
+
+\tikzset{
+  hex/.style={
+    draw, shape=regular polygon,regular polygon sides=6,minimum size=26mm,
+    inner sep=0pt,outer sep=0pt,shape border rotate=90, thick, font=\bf\relsize{4}
+  },
+}
+\title{Catalonia}
+
+\begin{document}
+\begin{problemDescription}
+Catalonia es una nación de comerciantes y para distribuir sus productos, los comerciantes tienen que
+desplazarse entre ciudades constantemente.
+Esto puede parecer una tarea sencilla, pero dada la peculiar distribución de las ciudades en
+Catalonia puede resultar difícil desplazarse entre ellas.
+
+La nación de Catalonia está conformada por infinitas ciudades de forma hexagonal.
+Al centro de la nación se encuentra su capital y el resto de las ciudades están distribuidas
+en \emph{anillos} al rededor de esta de forma que cada ciudad tiene 6 ciudades adyacentes.
+
+Para hacer más fácil su navegación, los comerciantes de Catalonia han ideado un esquema
+para enumerar las (infinitas) ciudades.
+Partiendo desde 0, se enumera primero la capital, luego se enumeran las ciudades del primer anillo,
+luego las del segundo y así formando una espiral infinita.
+La siguiente figura muestra un ejemplo de la enumeración para los primeros tres anillos.
+
+\newdimen\R
+\R=1cm
+\newcommand{\hex}[3][]{
+  \begin{scope}[rotate=90, xshift=#3*1.5*\R, yshift=#2*-0.866*\R]
+  \draw[thick,#1] (0:\R) \foreach \x in {60, 120,...,359} {
+    --(\x:\R)
+  } -- cycle(90:\R);
+  \end{scope}
+}
+\newcommand{\pos}[2]{
+  #1*0.866*\R, #2*1.5*\R
+}
+\begin{center}
+\begin{tikzpicture}[scale=0.8, every node/.style={scale=0.8, font=\bf\relsize{3}}]
+  \hex{ 0}{ 0}
+
+  \hex{ 1}{ 1}
+  \hex{-1}{ 1}
+  \hex{-2}{ 0}
+  \hex{-1}{-1}
+  \hex{ 1}{-1}
+  \hex{ 2}{ 0}
+
+  \hex{ 3}{ 1}
+  \hex{ 2}{ 2}
+  \hex{ 0}{ 2}
+  \hex{-2}{ 2}
+  \hex{-3}{ 1}
+  \hex{-4}{ 0}
+  \hex{-3}{-1}
+  \hex{-2}{-2}
+  \hex{ 0}{-2}
+  \hex{ 2}{-2}
+  \hex{ 3}{-1}
+  \hex{ 4}{ 0}
+
+  \hex{ 5}{ 1}
+  \hex{ 4}{ 2}
+  \hex{ 3}{ 3}
+  \hex{ 1}{ 3}
+  \hex{-1}{ 3}
+  \hex{-3}{ 3}
+  \hex{-4}{ 2}
+  \hex{-5}{ 1}
+  \hex{-6}{ 0}
+  \hex{-5}{-1}
+  \hex{-4}{-2}
+  \hex{-3}{-3}
+  \hex{-1}{-3}
+  \hex{ 1}{-3}
+  \hex{ 3}{-3}
+  \hex{ 4}{-2}
+  \hex{ 5}{-1}
+  \hex{ 6}{ 0}
+
+  \node[text=purple] (N0)  at (\pos{ 0}{ 0}) {0};
+
+  \node[text=blue] (N1)  at (\pos{ 1}{ 1}) {1};
+  \node[text=blue] (N2)  at (\pos{-1}{ 1}) {2};
+  \node[text=blue] (N3)  at (\pos{-2}{ 0}) {3};
+  \node[text=blue] (N4)  at (\pos{-1}{-1}) {4};
+  \node[text=blue] (N5)  at (\pos{ 1}{-1}) {5};
+  \node[text=blue] (N6)  at (\pos{ 2}{ 0}) {6};
+
+  \node[text=green] (N7)  at (\pos{ 3}{ 1}) {7};
+  \node[text=green] (N8)  at (\pos{ 2}{ 2}) {8};
+  \node[text=green] (N9)  at (\pos{ 0}{ 2}) {9};
+  \node[text=green] (N10) at (\pos{-2}{ 2}) {10};
+  \node[text=green] (N11) at (\pos{-3}{ 1}) {11};
+  \node[text=green] (N12) at (\pos{-4}{ 0}) {12};
+  \node[text=green] (N13) at (\pos{-3}{-1}) {13};
+  \node[text=green] (N14) at (\pos{-2}{-2}) {14};
+  \node[text=green] (N15) at (\pos{ 0}{-2}) {15};
+  \node[text=green] (N16) at (\pos{ 2}{-2}) {16};
+  \node[text=green] (N17) at (\pos{ 3}{-1}) {17};
+  \node[text=green] (N18) at (\pos{ 4}{ 0}) {18};
+
+  \node[text=orange] (N19) at (\pos{ 5}{ 1}) {19};
+  \node[text=orange] (N20) at (\pos{ 4}{ 2}) {20};
+  \node[text=orange] (N21) at (\pos{ 3}{ 3}) {21};
+  \node[text=orange] (N22) at (\pos{ 1}{ 3}) {22};
+  \node[text=orange] (N23) at (\pos{-1}{ 3}) {23};
+  \node[text=orange] (N24) at (\pos{-3}{ 3}) {24};
+  \node[text=orange] (N25) at (\pos{-4}{ 2}) {25};
+  \node[text=orange] (N26) at (\pos{-5}{ 1}) {26};
+  \node[text=orange] (N27) at (\pos{-6}{ 0}) {27};
+  \node[text=orange] (N28) at (\pos{-5}{-1}) {28};
+  \node[text=orange] (N29) at (\pos{-4}{-2}) {29};
+  \node[text=orange] (N30) at (\pos{-3}{-3}) {30};
+  \node[text=orange] (N31) at (\pos{-1}{-3}) {31};
+  \node[text=orange] (N32) at (\pos{ 1}{-3}) {32};
+  \node[text=orange] (N33) at (\pos{ 3}{-3}) {33};
+  \node[text=orange] (N34) at (\pos{ 4}{-2}) {34};
+  \node[text=orange] (N35) at (\pos{ 5}{-1}) {35};
+  \node[text=orange] (N36) at (\pos{ 6}{ 0}) {36};
+
+  % \draw[thick, ->] (N0) -- (N1);
+  % \draw[thick, ->] (N1) -- (N2);
+  % \draw[thick, ->] (N2) -- (N3);
+  % \draw[thick, ->] (N3) -- (N4);
+  % \draw[thick, ->] (N4) -- (N5);
+  % \draw[thick, ->] (N5) -- (N6);
+  % \draw[thick, ->] (N6) -- (N7);
+  % \draw[thick, ->] (N7) -- (N8);
+  % \draw[thick, ->] (N8) -- (N9);
+  % \draw[thick, ->] (N9) -- (N10);
+  % \draw[thick, ->] (N10) -- (N11);
+  % \draw[thick, ->] (N11) -- (N12);
+  % \draw[thick, ->] (N12) -- (N13);
+  % \draw[thick, ->] (N13) -- (N14);
+  % \draw[thick, ->] (N14) -- (N15);
+  % \draw[thick, ->] (N15) -- (N16);
+  % \draw[thick, ->] (N16) -- (N17);
+  % \draw[thick, ->] (N17) -- (N18);
+  % \draw[thick, ->] (N18) -- (N19);
+  % \draw[thick, ->] (N19) -- (N20);
+  % \draw[thick, ->] (N20) -- (N21);
+  % \draw[thick, ->] (N21) -- (N22);
+  % \draw[thick, ->] (N22) -- (N23);
+  % \draw[thick, ->] (N23) -- (N24);
+  % \draw[thick, ->] (N24) -- (N25);
+  % \draw[thick, ->] (N25) -- (N26);
+  % \draw[thick, ->] (N26) -- (N27);
+  % \draw[thick, ->] (N27) -- (N28);
+  % \draw[thick, ->] (N28) -- (N29);
+  % \draw[thick, ->] (N29) -- (N30);
+  % \draw[thick, ->] (N30) -- (N31);
+  % \draw[thick, ->] (N31) -- (N32);
+  % \draw[thick, ->] (N32) -- (N33);
+  % \draw[thick, ->] (N33) -- (N34);
+  % \draw[thick, ->] (N34) -- (N35);
+  % \draw[thick, ->] (N35) -- (N36);
+\end{tikzpicture}
+\end{center}
+
+Para desplazarse por Catalonia, un comerciante debe seguir un camino moviéndose
+siempre entre ciudades adyacentes.
+El movimiento entre dos ciudades adyacentes toma siempre una unidad de tiempo.
+% Dadas dos ciudades, un comerciante siempre usará el camino que tome menos tiempo para
+% desplazarse entre ellas.
+Por ejemplo, para desplazarse entre las ciudades 3 y 8, un comerciante puede moverse primero
+a la ciudad 0, luego a la 1 y finalmente a la 2 para un tiempo total igual a 3.
+
+Dadas una ciudad inicial $a$ y una final $b$, tu tarea es determinar el tiempo mínimo
+necesario para desplazarse entre $a$ y $b$.
+\end{problemDescription}
+
+\begin{inputDescription}
+    La entrada contiene una línea con dos enteros $a$ y $b$ \todo{limites} correspondientes respectivamente
+    a la ciudad inicial y final.
+\end{inputDescription}
+
+\begin{outputDescription}
+    La salida debe contener un único entero correspondiente al tiempo mínimo necesario
+    para desplazarse entre las ciudades $a$ y $b$. \todo{limite para respuesta}
+\end{outputDescription}
+
+\begin{scoreDescription}
+  \subtask{10}
+  Se probarán varios casos en que $a = 0$ y $b \leq 18$.
+  \subtask{30}
+  Se probarán varios casos en que el tiempo de desplazamiento entre $a$ y $b$ es menor que 100.
+  \subtask{60}
+  Se probarán varios casos sin restricciones adicionales.
+\end{scoreDescription}
+
+\begin{sampleDescription}
+\sampleIO{sample-1}
+\sampleIO{sample-2}
+\end{sampleDescription}
+
+\end{document}
+
+\begin{center}
+\begin{tikzpicture}[scale=0.7, every node/.style={scale=0.8}]
+  \hex[fill=purple, opacity=0.6]{ 0}{ 0}
+
+  \hex[fill=blue, opacity=0.6]{ 1}{ 1}
+  \hex[fill=blue, opacity=0.6]{-1}{ 1}
+  \hex[fill=blue, opacity=0.6]{-2}{ 0}
+  \hex[fill=blue, opacity=0.6]{-1}{-1}
+  \hex[fill=blue, opacity=0.6]{ 1}{-1}
+  \hex[fill=blue, opacity=0.6]{ 2}{ 0}
+
+  \hex[fill=green, opacity=0.6]{ 3}{ 1}
+  \hex[fill=green, opacity=0.6]{ 2}{ 2}
+  \hex[fill=green, opacity=0.6]{ 0}{ 2}
+  \hex[fill=green, opacity=0.6]{-2}{ 2}
+  \hex[fill=green, opacity=0.6]{-3}{ 1}
+  \hex[fill=green, opacity=0.6]{-4}{ 0}
+  \hex[fill=green, opacity=0.6]{-3}{-1}
+  \hex[fill=green, opacity=0.6]{-2}{-2}
+  \hex[fill=green, opacity=0.6]{ 0}{-2}
+  \hex[fill=green, opacity=0.6]{ 2}{-2}
+  \hex[fill=green, opacity=0.6]{ 3}{-1}
+  \hex[fill=green, opacity=0.6]{ 4}{ 0}
+
+  \hex[fill=orange, opacity=0.6]{ 5}{ 1}
+  \hex[fill=orange, opacity=0.6]{ 4}{ 2}
+  \hex[fill=orange, opacity=0.6]{ 3}{ 3}
+  \hex[fill=orange, opacity=0.6]{ 1}{ 3}
+  \hex[fill=orange, opacity=0.6]{-1}{ 3}
+  \hex[fill=orange, opacity=0.6]{-3}{ 3}
+  \hex[fill=orange, opacity=0.6]{-4}{ 2}
+  \hex[fill=orange, opacity=0.6]{-5}{ 1}
+  \hex[fill=orange, opacity=0.6]{-6}{ 0}
+  \hex[fill=orange, opacity=0.6]{-5}{-1}
+  \hex[fill=orange, opacity=0.6]{-4}{-2}
+  \hex[fill=orange, opacity=0.6]{-3}{-3}
+  \hex[fill=orange, opacity=0.6]{-1}{-3}
+  \hex[fill=orange, opacity=0.6]{ 1}{-3}
+  \hex[fill=orange, opacity=0.6]{ 3}{-3}
+  \hex[fill=orange, opacity=0.6]{ 4}{-2}
+  \hex[fill=orange, opacity=0.6]{ 5}{-1}
+  \hex[fill=orange, opacity=0.6]{ 6}{ 0}
+
+  % \node at (\pos{ 0}{ 0}) {0};
+  % \node at (\pos{ 1}{ 1}) {1};
+  % \node at (\pos{-1}{ 1}) {2};
+  % \node at (\pos{-2}{ 0}) {3};
+  % \node at (\pos{-1}{-1}) {4};
+  % \node at (\pos{ 1}{-1}) {5};
+  % \node at (\pos{ 2}{ 0}) {6};
+
+  % \node at (\pos{ 3}{ 1}) {7};
+  % \node at (\pos{ 2}{ 2}) {8};
+  % \node at (\pos{ 0}{ 2}) {9};
+  % \node at (\pos{-2}{ 2}) {10};
+  % \node at (\pos{-3}{ 1}) {11};
+  % \node at (\pos{-4}{ 0}) {12};
+  % \node at (\pos{-3}{-1}) {13};
+  % \node at (\pos{-2}{-2}) {14};
+  % \node at (\pos{ 0}{-2}) {15};
+  % \node at (\pos{ 2}{-2}) {16};
+  % \node at (\pos{ 3}{-1}) {17};
+  % \node at (\pos{ 4}{ 0}) {18};
+
+  % \node at (\pos{ 5}{ 1}) {19};
+  % \node at (\pos{ 4}{ 2}) {20};
+  % \node at (\pos{ 3}{ 3}) {21};
+  % \node at (\pos{ 1}{ 3}) {22};
+  % \node at (\pos{-1}{ 3}) {23};
+  % \node at (\pos{-3}{ 3}) {24};
+  % \node at (\pos{-4}{ 2}) {25};
+  % \node at (\pos{-5}{ 1}) {26};
+  % \node at (\pos{-6}{ 0}) {27};
+  % \node at (\pos{-4}{-2}) {29};
+  % \node at (\pos{-5}{-1}) {28};
+  % \node at (\pos{-3}{-3}) {30};
+  % \node at (\pos{-1}{-3}) {31};
+  % \node at (\pos{ 1}{-3}) {32};
+  % \node at (\pos{ 3}{-3}) {33};
+  % \node at (\pos{ 4}{-2}) {34};
+  % \node at (\pos{ 5}{-1}) {35};
+  % \node at (\pos{ 6}{ 0}) {36};
+\end{tikzpicture}
+\end{center}
