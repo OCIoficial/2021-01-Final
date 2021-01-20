@@ -9,6 +9,11 @@
 
 \newcommand{\todo}[1]{{\color{red} #1}}
 
+\definecolor{color1}{HTML}{6290ff}
+\definecolor{color2}{HTML}{775ef0}
+\definecolor{color3}{HTML}{dd2680}
+\definecolor{color4}{HTML}{fe6100}
+\definecolor{color5}{HTML}{ffb001}
 
 \pgfdeclareradialshading{ring}{\pgfpoint{0cm}{0cm}}%
 {rgb(0cm)=(0,0,0);
@@ -23,17 +28,18 @@ rgb(1cm)=(1, 1, 1)}
 \tikzset{
   hex/.style={
     draw, shape=regular polygon,regular polygon sides=6,minimum size=26mm,
-    inner sep=0pt,outer sep=0pt,shape border rotate=90, thick, font=\bf\relsize{4}
+    inner sep=0pt,outer sep=0pt,shape border rotate=90, thick, font=\bf\relsize{1}
   },
 }
 \title{Catalonia}
 
 \begin{document}
 \begin{problemDescription}
-Catalonia es una nación de comerciantes y para distribuir sus productos, los comerciantes tienen que
-desplazarse entre ciudades constantemente.
-Esto puede parecer una tarea sencilla, pero dada la peculiar distribución de las ciudades en
-Catalonia puede resultar difícil desplazarse entre ellas.
+Catalonia es una nación de comerciantes.
+Para distribuir sus productos, los comerciantes deben constantemente
+viajar entre ciudades.
+Esto puede parecer una tarea sencilla, pero dada la peculiar, distribución de las ciudades
+puede resultar difícil viajar entre ellas.
 
 La nación de Catalonia está conformada por infinitas ciudades de forma hexagonal.
 Al centro de la nación se encuentra su capital y el resto de las ciudades están distribuidas
@@ -43,7 +49,7 @@ Para hacer más fácil su navegación, los comerciantes de Catalonia han ideado 
 para enumerar las (infinitas) ciudades.
 Partiendo desde 0, se enumera primero la capital, luego se enumeran las ciudades del primer anillo,
 luego las del segundo y así formando una espiral infinita.
-La siguiente figura muestra un ejemplo de la enumeración para los primeros tres anillos.
+La siguiente figura muestra la enumeración para los primeros tres anillos.
 
 \newdimen\R
 \R=1cm
@@ -58,7 +64,7 @@ La siguiente figura muestra un ejemplo de la enumeración para los primeros tres
   #1*0.866*\R, #2*1.5*\R
 }
 \begin{center}
-\begin{tikzpicture}[scale=0.8, every node/.style={scale=0.8, font=\bf\relsize{3}}]
+\begin{tikzpicture}[scale=0.6, every node/.style={scale=0.6, font=\bf\relsize{3.5}}]
   \hex{ 0}{ 0}
 
   \hex{ 1}{ 1}
@@ -100,46 +106,46 @@ La siguiente figura muestra un ejemplo de la enumeración para los primeros tres
   \hex{ 5}{-1}
   \hex{ 6}{ 0}
 
-  \node[text=purple] (N0)  at (\pos{ 0}{ 0}) {0};
+  \node[text=color3] (N0)  at (\pos{ 0}{ 0}) {0};
 
-  \node[text=blue] (N1)  at (\pos{ 1}{ 1}) {1};
-  \node[text=blue] (N2)  at (\pos{-1}{ 1}) {2};
-  \node[text=blue] (N3)  at (\pos{-2}{ 0}) {3};
-  \node[text=blue] (N4)  at (\pos{-1}{-1}) {4};
-  \node[text=blue] (N5)  at (\pos{ 1}{-1}) {5};
-  \node[text=blue] (N6)  at (\pos{ 2}{ 0}) {6};
+  \node[text=color1] (N1)  at (\pos{ 1}{ 1}) {1};
+  \node[text=color1] (N2)  at (\pos{-1}{ 1}) {2};
+  \node[text=color1] (N3)  at (\pos{-2}{ 0}) {3};
+  \node[text=color1] (N4)  at (\pos{-1}{-1}) {4};
+  \node[text=color1] (N5)  at (\pos{ 1}{-1}) {5};
+  \node[text=color1] (N6)  at (\pos{ 2}{ 0}) {6};
 
-  \node[text=green] (N7)  at (\pos{ 3}{ 1}) {7};
-  \node[text=green] (N8)  at (\pos{ 2}{ 2}) {8};
-  \node[text=green] (N9)  at (\pos{ 0}{ 2}) {9};
-  \node[text=green] (N10) at (\pos{-2}{ 2}) {10};
-  \node[text=green] (N11) at (\pos{-3}{ 1}) {11};
-  \node[text=green] (N12) at (\pos{-4}{ 0}) {12};
-  \node[text=green] (N13) at (\pos{-3}{-1}) {13};
-  \node[text=green] (N14) at (\pos{-2}{-2}) {14};
-  \node[text=green] (N15) at (\pos{ 0}{-2}) {15};
-  \node[text=green] (N16) at (\pos{ 2}{-2}) {16};
-  \node[text=green] (N17) at (\pos{ 3}{-1}) {17};
-  \node[text=green] (N18) at (\pos{ 4}{ 0}) {18};
+  \node[text=color5] (N7)  at (\pos{ 3}{ 1}) {7};
+  \node[text=color5] (N8)  at (\pos{ 2}{ 2}) {8};
+  \node[text=color5] (N9)  at (\pos{ 0}{ 2}) {9};
+  \node[text=color5] (N10) at (\pos{-2}{ 2}) {10};
+  \node[text=color5] (N11) at (\pos{-3}{ 1}) {11};
+  \node[text=color5] (N12) at (\pos{-4}{ 0}) {12};
+  \node[text=color5] (N13) at (\pos{-3}{-1}) {13};
+  \node[text=color5] (N14) at (\pos{-2}{-2}) {14};
+  \node[text=color5] (N15) at (\pos{ 0}{-2}) {15};
+  \node[text=color5] (N16) at (\pos{ 2}{-2}) {16};
+  \node[text=color5] (N17) at (\pos{ 3}{-1}) {17};
+  \node[text=color5] (N18) at (\pos{ 4}{ 0}) {18};
 
-  \node[text=orange] (N19) at (\pos{ 5}{ 1}) {19};
-  \node[text=orange] (N20) at (\pos{ 4}{ 2}) {20};
-  \node[text=orange] (N21) at (\pos{ 3}{ 3}) {21};
-  \node[text=orange] (N22) at (\pos{ 1}{ 3}) {22};
-  \node[text=orange] (N23) at (\pos{-1}{ 3}) {23};
-  \node[text=orange] (N24) at (\pos{-3}{ 3}) {24};
-  \node[text=orange] (N25) at (\pos{-4}{ 2}) {25};
-  \node[text=orange] (N26) at (\pos{-5}{ 1}) {26};
-  \node[text=orange] (N27) at (\pos{-6}{ 0}) {27};
-  \node[text=orange] (N28) at (\pos{-5}{-1}) {28};
-  \node[text=orange] (N29) at (\pos{-4}{-2}) {29};
-  \node[text=orange] (N30) at (\pos{-3}{-3}) {30};
-  \node[text=orange] (N31) at (\pos{-1}{-3}) {31};
-  \node[text=orange] (N32) at (\pos{ 1}{-3}) {32};
-  \node[text=orange] (N33) at (\pos{ 3}{-3}) {33};
-  \node[text=orange] (N34) at (\pos{ 4}{-2}) {34};
-  \node[text=orange] (N35) at (\pos{ 5}{-1}) {35};
-  \node[text=orange] (N36) at (\pos{ 6}{ 0}) {36};
+  \node[text=color4] (N19) at (\pos{ 5}{ 1}) {19};
+  \node[text=color4] (N20) at (\pos{ 4}{ 2}) {20};
+  \node[text=color4] (N21) at (\pos{ 3}{ 3}) {21};
+  \node[text=color4] (N22) at (\pos{ 1}{ 3}) {22};
+  \node[text=color4] (N23) at (\pos{-1}{ 3}) {23};
+  \node[text=color4] (N24) at (\pos{-3}{ 3}) {24};
+  \node[text=color4] (N25) at (\pos{-4}{ 2}) {25};
+  \node[text=color4] (N26) at (\pos{-5}{ 1}) {26};
+  \node[text=color4] (N27) at (\pos{-6}{ 0}) {27};
+  \node[text=color4] (N28) at (\pos{-5}{-1}) {28};
+  \node[text=color4] (N29) at (\pos{-4}{-2}) {29};
+  \node[text=color4] (N30) at (\pos{-3}{-3}) {30};
+  \node[text=color4] (N31) at (\pos{-1}{-3}) {31};
+  \node[text=color4] (N32) at (\pos{ 1}{-3}) {32};
+  \node[text=color4] (N33) at (\pos{ 3}{-3}) {33};
+  \node[text=color4] (N34) at (\pos{ 4}{-2}) {34};
+  \node[text=color4] (N35) at (\pos{ 5}{-1}) {35};
+  \node[text=color4] (N36) at (\pos{ 6}{ 0}) {36};
 
   % \draw[thick, ->] (N0) -- (N1);
   % \draw[thick, ->] (N1) -- (N2);
@@ -180,34 +186,41 @@ La siguiente figura muestra un ejemplo de la enumeración para los primeros tres
 \end{tikzpicture}
 \end{center}
 
-Para desplazarse por Catalonia, un comerciante debe seguir un camino moviéndose
+Para viajar entre dos ciudades, un comerciante debe seguir un camino moviéndose
 siempre entre ciudades adyacentes.
 El movimiento entre dos ciudades adyacentes toma siempre una unidad de tiempo.
 % Dadas dos ciudades, un comerciante siempre usará el camino que tome menos tiempo para
 % desplazarse entre ellas.
-Por ejemplo, para desplazarse entre las ciudades 3 y 8, un comerciante puede moverse primero
-a la ciudad 0, luego a la 1 y finalmente a la 2 para un tiempo total igual a 3.
+Por ejemplo, para viajar desde la ciudad 3 a la 8, un comerciante puede moverse primero
+a la ciudad 0, luego a la 1 y finalmente a la 2 para un tiempo total de viaje igual a 3.
+De forma alternativa, puede también usarse el camino 3-2-1-8, en cuyo caso el tiempo total de viaje
+es también 3.
+El camino 3-11-2-1-8 también es posible, pero este tiene un tiempo total de viaje igual a 4.
+En este caso el tiempo mínimo necesario para viajar entre 3 y 8 es 3, pues no hay ningún otro camino
+más corto.
 
 Dadas una ciudad inicial $a$ y una final $b$, tu tarea es determinar el tiempo mínimo
-necesario para desplazarse entre $a$ y $b$.
+necesario para viajar desde $a$ hacia $b$.
 \end{problemDescription}
 
 \begin{inputDescription}
-    La entrada contiene una línea con dos enteros $a$ y $b$ \todo{limites} correspondientes respectivamente
-    a la ciudad inicial y final.
+  La entrada consiste en una única línea con dos enteros $a$ y $b$ ($0\leq a < b \leq 10^9$)
+  correspondientes respectivamente a la ciudad inicial y final.
 \end{inputDescription}
 
 \begin{outputDescription}
-    La salida debe contener un único entero correspondiente al tiempo mínimo necesario
-    para desplazarse entre las ciudades $a$ y $b$. \todo{limite para respuesta}
+  La salida debe contener un único entero correspondiente al tiempo mínimo necesario
+  para viajar desde la ciudad $a$ a la $b$.
+  Se garantiza que la solución será menor o igual que $10^9$.
 \end{outputDescription}
 
 \begin{scoreDescription}
   \subtask{10}
   Se probarán varios casos en que $a = 0$ y $b \leq 18$.
-  \subtask{30}
-  Se probarán varios casos en que el tiempo de desplazamiento entre $a$ y $b$ es menor que 100.
-  \subtask{60}
+  \subtask{35}
+  Se probarán varios casos en que $0\leq a < b \leq 10^5$ y se garantiza que el tiempo mínimo de
+  desplazamiento entre $a$ y $b$ será menor o igual que 100.
+  \subtask{55}
   Se probarán varios casos sin restricciones adicionales.
 \end{scoreDescription}
 
