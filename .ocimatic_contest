@@ -2,6 +2,7 @@
     "tasks": [
         "cripto",
         "catalonia",
-        "ajedrez"
+        "ajedrez",
+        "roberto"
     ]
 }

@@ -162,6 +162,6 @@
 
 \newcounter{subtaskcnt}
 \newenvironment{scoreDescription}{\subsection*{Subtareas y puntaje}\setcounter{subtaskcnt}{1}}{}
-\newcommand{\subtask}[1]{\subsubsection*{Subtarea \arabic{subtaskcnt} (#1 puntos)}\stepcounter{subtaskcnt}}
+\newcommand{\subtask}[1]{\subsubsection*{Subtarea \arabic{subtaskcnt} (#1 puntos)}\vspace{-1em}\stepcounter{subtaskcnt}}
 
 \newenvironment{sampleDescription}{\subsection*{Ejemplos de entrada y salida}}{}
