@@ -1,0 +1,66 @@
+\documentclass{oci}
+\usepackage[utf8]{inputenc}
+\usepackage{lipsum}
+\usepackage{nicefrac}
+
+\title{Torneo de ajedrez}
+
+\begin{document}
+\begin{problemDescription}
+  Debido a la popularidad de la miniserie original de Netflix, Gambito de Dama, el ajedrez
+  se está volviendo cada vez más popular.
+  Decenas de nuevos torneos se organizan cada mes y la cantidad sigue en aumento.
+  Dado este explosivo aumento, la asociación mundial de ajedrez se está comenzando a preocupar
+  de la fiabilidad en los resultados de todos estos nuevos torneos.
+
+  En un torneo de ajedrez cada participante debe enfrentarse a diferentes contrincantes y en cada
+  partida recibirá puntaje dependiendo del resultado.
+  Una partida puede terminar con uno de los dos contrincantes victorioso en cuyo caso el
+  participante ganador recibe un punto (1) mientras que el perdedor recibe cero puntos (0).
+  Adicionalmente, los contrincantes pueden decidir terminar en \emph{tablas} en cuyo caso ambos
+  contrincantes reciben medio punto (\nicefrac{1}{2}).
+  % Al final del torneo el participante con más puntos será el campeón.
+  Es posible
+  % , debido a la alta cantidad de partidas que comúnmente terminan en tablas,
+  que al final de un torneo varios participantes terminen con la misma cantidad de puntos.
+  Al final del torneo, todos los participantes que obtuvieron el puntaje máximo se coronarán
+  como campeón del torneo.
+
+  Dada una lista con los resultados de cada partida, a la asociación
+  mundial de ajedrez le gustaría determinar quienes son los campeones del torneo.
+  ?`Podrías ayudarlos?
+\end{problemDescription}
+
+\begin{inputDescription}
+  La primera línea de la entrada contiene dos enteros $N$ y $P$ ($0 < N \leq 100, 0 < M \leq 1000$),
+  correspondientes respectivamente a la cantidad de participantes y la cantidad de partidas
+  en el torneo.
+  Cada participante en el torneo es identificado con un entero entre 0 y $N-1$.
+
+  Cada una de las siguientes $N$ líneas contiene tres enteros $A$, $B$ y $C$
+  ($0\leq A < B < N$), describiendo el resultado de una partida.
+  Los enteros $A$ y $B$ corresponden a los jugadores que se enfrentaron en esa partida.
+  El entero $C$ indica el resultado de la partida.
+  Si la partida termino en tablas, $C$ será igual a {-1}.
+  En caso contrario, $C$ será igual a $A$, indicando que $A$ fue el ganador de la partida, o igual
+  a $B$, indicando que $B$ fue el ganador de la partida.
+\end{inputDescription}
+
+\begin{outputDescription}
+  La salida debe contener una línea con una lista de enteros
+  indicando todos los participantes que se coronaron como campeón del torneo.
+  La lista puede ser impresa en cualquier orden.
+\end{outputDescription}
+
+\begin{scoreDescription}
+  Este problema no contiene subtareas.
+  Se probarán varios casos y se entregará puntaje proporcional a la cantidad de casos correctos
+  siendo 100 el puntaje máximo.
+\end{scoreDescription}
+
+\begin{sampleDescription}
+\sampleIO{sample-1}
+\sampleIO{sample-2}
+\end{sampleDescription}
+
+\end{document}

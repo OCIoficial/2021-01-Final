@@ -1,6 +1,7 @@
 {
     "tasks": [
         "cripto",
-        "catalonia"
+        "catalonia",
+        "ajedrez"
     ]
 }
