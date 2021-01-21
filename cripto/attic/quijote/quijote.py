@@ -68,7 +68,7 @@ def print_stats(stats: Tuple[Counter[str], int]):
     (counter, total) = stats
     print(f"Total: {total}")
     for (k, c) in counter.most_common():
-        print(f"{k}\t{c/total:.6}\t{c}")
+        print(f"{k}\t{c/total*100:10.4f}%\t{c}")
 
 
 if __name__ == "__main__":

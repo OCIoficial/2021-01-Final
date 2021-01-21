@@ -1,4 +1,5 @@
 \documentclass{oci}
+\usepackage{boldline}
 \usepackage[utf8]{inputenc}
 \usepackage{lipsum}
 \usepackage{xcolor}
@@ -19,7 +20,8 @@ En primer lugar, solo encriptará mensajes conformados por letras mayúsculas de
 inglés, es decir, los mensajes no contendrán tildes ni la letra Ñ.
 Los mensajes pueden contener espacios, pero estos no deben ser modificados en el proceso de
 encriptación.
-Para encriptar el mensaje, César elige un número $k$ entre 0 y 25 que será utilizado como llave.
+Para encriptar el mensaje, César debe primero elegir un número $k$ entre 0 y 25 que será
+utilizado como llave.
 Posteriormente, cada letra del mensaje es reemplazada por la letra del abecedario que se
 encuentra $k$ posiciones más adelante.
 En caso de llegar al final del abecedario se debe continuar contando desde la $A$.
@@ -28,12 +30,16 @@ reemplazada por la letra $(i+k)\% 26$.
 
 Como ejemplo considera el siguiente mensaje
 \begin{center}
-  \texttt{SE HA DE ATREVER A ESCRIBIR CON PLUMA DE AVESTRUZ}
+  \texttt{SE ATREVIO O SE HA DE ATREVER A ESCRIBIR CON PLUMA DE AVESTRUZ}
 \end{center}
 Para el $k=5$ el mensaje encriptado sería:
 \begin{center}
-  \texttt{XJ MF IJ FYWJAJW F JXHWNGNW HTS UQZRF IJ FAJXYWZE}
+  \texttt{XJ FYWJANT T XJ MF IJ FYWJAJW F JXHWNGNW HTS UQZRF IJ FAJXYWZE}
 \end{center}
+
+César guarda con recelo las llaves que usa para encriptar sus mensajes y está confiado que
+estos están protegidos y nadie los podrá descifrar.
+?`Serás capaz de romper el código de César y desencriptar sus mensajes?
 
 \end{problemDescription}
 
@@ -42,21 +48,43 @@ Dado un mensaje encriptado con el método de César, tu tarea es determinar la l
 utilizada para encriptarlo.
 Tu solución será probada con distintos mensajes y obtendrás puntaje proporcional a la cantidad
 de casos correctos siendo 100 el puntaje máximo.
-Todos los mensajes corresponderán a fragmentos del libro Don Quijote de la Macha a los cuales se
-les han eliminado los tildes y signos de puntuación.
+Todos los mensajes corresponderán a fragmentos del libro \emph{Don Quijote de la Macha} a los
+cuales se les han eliminado los tildes y signos de puntuación, y cada letra ha sido transformada
+a mayúscula.
 
-Para resolver esta tarea puede serte útil la siguiente información de la frecuencia de aparición
-\todo{fill with stats}
+Para resolver este problema pueden serte útil algunas estadísticas sobre el libro.
+El Quijote está compuesto de un total de 1\,650\,626 caracteres (sin considerar espacios) y
+naturalmente algunas letras aparecen más que otras.
+A continuación se muestra una tabla con la frecuencia de aparición de cada una de las letras.
+
+\newcolumntype{?}{!{\vrule width 1pt}}
+\begin{table}[t]
+  \centering
+\begin{tabular}{lr?lr?lr}
+  \hlineB{2}
+E  & 13.97\% & U  &  4.85\% & V  &  1.09\%\rule{0pt}{2.6ex}\\
+A  & 12.22\% & T  &  3.76\% & G  &  1.05\% \\
+O  &  9.91\% & C  &  3.62\% & J  &  0.64\% \\
+S  &  7.66\% & M  &  2.72\% & F  &  0.46\% \\
+N  &  6.61\% & P  &  2.16\% & Z  &  0.40\% \\
+R  &  6.15\% & Q  &  1.98\% & X  &  0.02\% \\
+I  &  5.49\% & Y  &  1.53\% & W  &  0.0001\% \\
+L  &  5.43\% & B  &  1.47\% &  \\
+D  &  5.32\% & H  &  1.21\% &\rule[-0.9ex]{0pt}{0pt}\\
+  \hlineB{2}
+\end{tabular}
+\caption{Frecuencia de aparición de cada letra en el libro el Quijote de la mancha}
+\end{table}
 
 \begin{inputDescription}
     La entrada está descrita en dos líneas.
-    La primera contiene un entero $N$ correspondiente a la cantidad de caracteres en el mensaje
+    La primera contiene un entero $N$ ($50 \leq N \leq 1000$)
+    correspondiente a la cantidad de caracteres en el mensaje
     (incluyendo espacios).
-    La segunda línea contiene una cadena de texto conteniendo solo espacios o letras mayúsculas
+    La segunda línea contiene una cadena de texto conteniendo solo espacios y letras mayúsculas
     del alfabeto inglés.
-    La cadena de texto corresponderá siempre a un mensaje que fue encriptado utilizando el método
-    descrito en el enunciado.
-
+    La cadena de texto corresponderá siempre a un mensaje extraído de el Quijote que fue encriptado
+    utilizando el método descrito en el enunciado.
 \end{inputDescription}
 
 \begin{outputDescription}
@@ -68,6 +96,7 @@ Para resolver esta tarea puede serte útil la siguiente información de la frecu
 \begin{sampleDescription}
 \sampleIO*[0.95]{sample-1}
 \sampleIO*[0.95]{sample-2}
+\sampleIO*[0.95]{sample-3}
 \end{sampleDescription}
 
 \end{document}
