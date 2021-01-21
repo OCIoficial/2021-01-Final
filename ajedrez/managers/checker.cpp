@@ -24,15 +24,15 @@ int main(int argc, char *argv[]) {
   sort(out.begin(), out.end());
 
   if (out.size() != expected.size()) {
-    cout << "0.0";
+    cout << "0.0\n";
   } else {
     for (int i = 0; i < expected.size(); ++i) {
       if (expected[i] != out[i]) {
-        cout << "0.0";
+        cout << "0.0\n";
         return 0;
       }
     }
-    cout << "1.0";
+    cout << "1.0\n";
   }
   return 0;
 }

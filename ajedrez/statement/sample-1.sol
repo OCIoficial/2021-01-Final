@@ -1,1 +1,5 @@
-<sample output data here>
+2
+3
+0
+1
+4

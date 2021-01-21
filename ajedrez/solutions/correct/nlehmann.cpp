@@ -26,7 +26,7 @@ int main() {
 
   for (int i = 0; i < N; ++i) {
     if (points[i] == vmax) {
-      printf("%d\n");
+      printf("%d\n", i);
     }
   }
 
