@@ -12,24 +12,24 @@
 # To generate test cases using test plan use `ocimatic input`
 
 
-[Subtask 1]
-  # Use sample data as test
-  1 ; copy statement/sample-1.in
-  1 ; copy statement/sample-2.in
-
-  # Manual test case
-  2 ; copy attic/manual-1.in
-
-  # Random tests
-  3 ; random.cpp 10 100
-  3 ; random.cpp 100 1000
-
-
-[Subtask 2]
-  # Random tests
-  1 ; random.java 10 20 30
-  1 ; random.java 20 30 40
-
-  # More random tests
-  2 ; random.py 1 1000
-
+[Subtask 1 - validator.cpp]
+  random ; gen_random.py 2 1
+  random ; gen_random.py 20 1
+  random ; gen_random.py 40 1
+  random ; gen_random.py 60 1
+  random ; gen_random.py 80 1
+  random ; gen_random.py 100 1
+  random ; gen_random.py 10 45
+  random ; gen_random.py 20 190
+  random ; gen_random.py 100 1000
+  random ; gen_random.py 100 1000
+  random ; gen_random.py 100 1000
+  random ; gen_random.py 100 1000
+  random ; gen_random.py 100 1000
+  random ; gen_random.py 100 1000
+  random ; gen_random.py 100 1000
+  random ; gen_random.py 100 1000
+  random ; gen_random.py 100 1000
+  random ; gen_random.py 100 1000
+  random ; gen_random.py 100 1000
+  random ; gen_random.py 100 1000
