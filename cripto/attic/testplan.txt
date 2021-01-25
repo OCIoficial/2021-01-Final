@@ -12,24 +12,61 @@
 # To generate test cases using test plan use `ocimatic input`
 
 
-[Subtask 1 - validators/st1.cpp]
-  # Use sample data as test
-  1 ; copy statement/sample-1.in
-  1 ; copy statement/sample-2.in
-
-  # Manual test case
-  #2 ; copy attic/manual-1.in
-
-  # Random tests
-  #3 ; random.cpp 10 100
-  #3 ; random.cpp 100 1000
-
+[Subtask 1]
+  # Fixed a = 0, b <= 36
+  #1 ; GenSmallFixed0.py 0
+  #1 ; GenSmallFixed0.py 3
+  #1 ; GenSmallFixed0.py 4
+  #1 ; GenSmallFixed0.py 6
+  #1 ; GenSmallFixed0.py 11
+  #1 ; GenSmallFixed0.py 13
+  #1 ; GenSmallFixed0.py 17
+  #1 ; GenSmallFixed0.py 25
+  #1 ; GenSmallFixed0.py 31
+  #1 ; GenSmallFixed0.py 36
+    
 
 [Subtask 2]
-  # Random tests
-  #1 ; random.java 10 20 30
-  #1 ; random.java 20 30 40
+  # Fixed a = 0, b <= 10^18
+  #2 ; GenFixed0.py 1000000000000000000
+  #2 ; GenFixed0.py 1000000000000000000
+  #2 ; GenFixed0.py 1000000000000000000
+  #2 ; GenFixed0.py 1000000000000000000
+  #2 ; GenFixed0.py 1000000000000000000
+  #2 ; GenFixed0.py 1000000000000000000
+  #2 ; GenFixed0.py 1000000000000000000
+  #2 ; GenFixed0.py 1000000000000000000
+  #2 ; GenFixed0.py 1000000000000000000
+  #2 ; GenFixed0.py 1000000000000000000
+  #2 ; GenFixed0.py 1000000000000000000
+  #2 ; GenFixed0.py 1000000000000000000
 
-  # More random tests
-  #2 ; random.py 1 1000
+[Subtask 3]
+  # Random a,b <= 10^5
+  #3 ; GenRandom.py 100000
+  #3 ; GenRandom.py 100000
+  #3 ; GenRandom.py 100000
+  #3 ; GenRandom.py 100000
+  #3 ; GenRandom.py 100000
+  #3 ; GenRandom.py 100000
+  #3 ; GenRandom.py 100000
+  #3 ; GenRandom.py 100000
+  #3 ; GenRandom.py 100000
+  #3 ; GenRandom.py 100000
+  #3 ; GenRandom.py 100000
+  #3 ; GenRandom.py 100000
 
+[Subtask 3]
+  # Random a,b <= 10^5
+  #4 ; GenRandom.py 1000000000000000000
+  #4 ; GenRandom.py 1000000000000000000
+  #4 ; GenRandom.py 1000000000000000000
+  #4 ; GenRandom.py 1000000000000000000
+  #4 ; GenRandom.py 1000000000000000000
+  #4 ; GenRandom.py 1000000000000000000
+  #4 ; GenRandom.py 1000000000000000000
+  #4 ; GenRandom.py 1000000000000000000
+  #4 ; GenRandom.py 1000000000000000000
+  #4 ; GenRandom.py 1000000000000000000
+  #4 ; GenRandom.py 1000000000000000000
+  #4 ; GenRandom.py 1000000000000000000
