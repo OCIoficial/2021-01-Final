@@ -89,12 +89,16 @@ if __name__ == "__main__":
     extract_parser.add_argument('filename')
     extract_parser.add_argument('-c', '--chapter', type=int, required=True)
     extract_parser.add_argument('-p', '--paragraph', type=int, required=True)
+    extract_parser.add_argument('-l', '--length', action=argparse.BooleanOptionalAction, default=True)
     stats_parser = subparsers.add_parser('stats')
     stats_parser.add_argument('filename')
 
     args = parser.parse_args()
 
     if args.command == "extract":
-        print(extract_paragraph(args.filename, args.chapter, args.paragraph))
+        paragraph = extract_paragraph(args.filename, args.chapter, args.paragraph)
+        if (args.length):
+            print(len(paragraph))
+        print(paragraph)
     elif args.command == "stats":
         print_stats_for_file(args.filename)
