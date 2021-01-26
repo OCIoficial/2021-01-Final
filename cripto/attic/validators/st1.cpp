@@ -6,7 +6,7 @@ using namespace std;
 int main() {
     registerValidation();
 
-    int unread = inf.readInt(300, 100000000, "LENGTH");
+    int unread = inf.readInt(50, 1000, "LENGTH");
     inf.readEoln();
 
     while (unread > 0) {
