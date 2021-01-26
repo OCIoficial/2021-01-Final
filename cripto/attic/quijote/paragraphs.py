@@ -1,16 +1,17 @@
 #!/usr/bin/python
-import sys
 import argparse
+import random
+import sys
 from collections import Counter
 from typing import Generator, TextIO
 
 
 def unaccent(c: str) -> str:
     assert(c.isalpha() and len(c) == 1 and c.isupper())
-    map = {'Á': 'A', 'É': 'E', 'Í': 'I', 'Ó': 'O', 'Ú': 'U',
+    map = {'Á': 'A', 'É': 'E', 'Í': 'I', 'Ó': 'O', 'Ú': 'U', 'Ñ': 'N',
            'Ä': 'A', 'Ë': 'E', 'Ï': 'I', 'Ü': 'U', 'Ù': 'U', 'À': 'A'}
     c = map.get(c, c)
-    if not (ord('A') <= ord(c) <= ord('Z') or c == 'Ñ'):
+    if not (ord('A') <= ord(c) <= ord('Z')):
         print(f'Unexpected alpha character >{c}<', file=sys.stderr)
         sys.exit()
     return c
@@ -62,7 +63,7 @@ def extract_paragraph(filename: str, num_chapter: int, num_paragraph: int) -> st
 
 def print_stats_for_file(filename: str) -> None:
     with open(filename, "r") as f:
-        print("chapter,paragraph,totalalpha,1st frequent,1st percent,2nd frequent,2nd percent,3rd frequent,3rd percent,one_letter_words,prefix")
+        print("chapter,paragraph,n,totalalpha,1st frequent,1st percent,2nd frequent,2nd percent,3rd frequent,3rd percent,one_letter_words,prefix")
         for num_c, chapter in enumerate(generate_chapter(f), start=1):
             for num_p, paragraph in enumerate(generate_paragraph(chapter), start=1):
                 print_stats_for_paragraph(normalize_paragraph(paragraph.strip()), num_c, num_p)
@@ -88,23 +89,36 @@ def print_stats_for_paragraph(paragraph: str, num_c: int, num_p: int) -> str:
     return str
 
 
+def encrypt(paragraph: str, k: int):
+    cipher = []
+    for c in paragraph:
+        if ord('A') <= ord(c) <= ord('Z'):
+            cipher.append(chr((ord(c) - ord('A') + k) % 26 + ord('A')))
+        else:
+            cipher.append(c)
+    return ''.join(cipher)
+
+
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(prog="paragraphs.py")
+    parser = argparse.ArgumentParser()
     subparsers = parser.add_subparsers(dest='command', required=True)
     extract_parser = subparsers.add_parser('extract')
     extract_parser.add_argument('filename')
     extract_parser.add_argument('-c', '--chapter', type=int, required=True)
     extract_parser.add_argument('-p', '--paragraph', type=int, required=True)
     extract_parser.add_argument('-l', '--length', action=argparse.BooleanOptionalAction, default=True)
+    extract_parser.add_argument('-e', '--encrypt', action=argparse.BooleanOptionalAction, default=True)
     stats_parser = subparsers.add_parser('stats')
     stats_parser.add_argument('filename')
 
-    args = parser.parse_args()
+    random.seed(str(sys.argv[1:]))
+
+    args = parser.parse_args(sys.argv[2:])
 
     if args.command == "extract":
         paragraph = extract_paragraph(args.filename, args.chapter, args.paragraph)
-        if (args.length):
+        if args.length:
             print(len(paragraph))
-        print(paragraph)
+        print(encrypt(paragraph, random.randint(0, 25)) if args.encrypt else paragraph)
     elif args.command == "stats":
         print_stats_for_file(args.filename)
