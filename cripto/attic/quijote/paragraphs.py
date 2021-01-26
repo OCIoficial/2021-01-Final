@@ -75,10 +75,16 @@ def print_stats_for_paragraph(paragraph: str, num_c: int, num_p: int) -> str:
     one_letter_words = list({word for word in paragraph.split() if len(word) == 1})
     counter.update(letters)
     total = len(letters)
+    length = len(paragraph)
     if total >= 30:
-        print(",".join(
-            [str(num_c), str(num_p), str(total), *map(lambda pair: f"{pair[0]},{pair[1]/total*100:.4f}%", counter.most_common(3)), "-".join(one_letter_words), paragraph[:20]]
-        ))
+        print(",".join([
+            str(num_c),
+            str(num_p),
+            str(length),
+            str(total),
+            *map(lambda pair: f"{pair[0]},{pair[1]/total*100:.4f}%", counter.most_common(3)),
+            "-".join(one_letter_words), paragraph[:20]
+        ]))
     return str
 
 
