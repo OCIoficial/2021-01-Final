@@ -39,7 +39,7 @@ Catalonia es una nación de comerciantes.
 Para distribuir sus productos, los comerciantes deben constantemente
 viajar entre ciudades.
 Esto puede parecer una tarea sencilla, pero dada la peculiar, distribución de las ciudades
-puede resultar difícil viajar entre ellas.
+en Catalonia puede resultar difícil viajar entre ellas.
 
 La nación de Catalonia está conformada por infinitas ciudades de forma hexagonal.
 Al centro de la nación se encuentra su capital y el resto de las ciudades están distribuidas
@@ -146,43 +146,6 @@ La siguiente figura muestra la enumeración para los primeros tres anillos.
   \node[text=color4] (N34) at (\pos{ 4}{-2}) {34};
   \node[text=color4] (N35) at (\pos{ 5}{-1}) {35};
   \node[text=color4] (N36) at (\pos{ 6}{ 0}) {36};
-
-  % \draw[thick, ->] (N0) -- (N1);
-  % \draw[thick, ->] (N1) -- (N2);
-  % \draw[thick, ->] (N2) -- (N3);
-  % \draw[thick, ->] (N3) -- (N4);
-  % \draw[thick, ->] (N4) -- (N5);
-  % \draw[thick, ->] (N5) -- (N6);
-  % \draw[thick, ->] (N6) -- (N7);
-  % \draw[thick, ->] (N7) -- (N8);
-  % \draw[thick, ->] (N8) -- (N9);
-  % \draw[thick, ->] (N9) -- (N10);
-  % \draw[thick, ->] (N10) -- (N11);
-  % \draw[thick, ->] (N11) -- (N12);
-  % \draw[thick, ->] (N12) -- (N13);
-  % \draw[thick, ->] (N13) -- (N14);
-  % \draw[thick, ->] (N14) -- (N15);
-  % \draw[thick, ->] (N15) -- (N16);
-  % \draw[thick, ->] (N16) -- (N17);
-  % \draw[thick, ->] (N17) -- (N18);
-  % \draw[thick, ->] (N18) -- (N19);
-  % \draw[thick, ->] (N19) -- (N20);
-  % \draw[thick, ->] (N20) -- (N21);
-  % \draw[thick, ->] (N21) -- (N22);
-  % \draw[thick, ->] (N22) -- (N23);
-  % \draw[thick, ->] (N23) -- (N24);
-  % \draw[thick, ->] (N24) -- (N25);
-  % \draw[thick, ->] (N25) -- (N26);
-  % \draw[thick, ->] (N26) -- (N27);
-  % \draw[thick, ->] (N27) -- (N28);
-  % \draw[thick, ->] (N28) -- (N29);
-  % \draw[thick, ->] (N29) -- (N30);
-  % \draw[thick, ->] (N30) -- (N31);
-  % \draw[thick, ->] (N31) -- (N32);
-  % \draw[thick, ->] (N32) -- (N33);
-  % \draw[thick, ->] (N33) -- (N34);
-  % \draw[thick, ->] (N34) -- (N35);
-  % \draw[thick, ->] (N35) -- (N36);
 \end{tikzpicture}
 \end{center}
 
@@ -204,24 +167,22 @@ necesario para viajar desde $a$ hacia $b$.
 \end{problemDescription}
 
 \begin{inputDescription}
-  La entrada consiste en una única línea con dos enteros $a$ y $b$ ($0\leq a < b \leq 10^9$)
+  La entrada consiste en una única línea con dos enteros $a$ y $b$ ($0\leq a < b \leq 10^{18}$)
   correspondientes respectivamente a la ciudad inicial y final.
 \end{inputDescription}
 
 \begin{outputDescription}
   La salida debe contener un único entero correspondiente al tiempo mínimo necesario
   para viajar desde la ciudad $a$ a la $b$.
-  Se garantiza que la solución será menor o igual que $10^9$.
 \end{outputDescription}
 
 \begin{scoreDescription}
   \subtask{a}
-  Se probarán varios casos en que $a = 0$ y $b \leq 18$.
-  \subtask{a}
-  Se probarán varios casos en que $a$ y $b$ se encuentran en la
-  línea horizontal que pasa por 0.
+  Se probarán varios casos en que $a = 0$ y $b \leq 36$.
+  \subtask{b}
+  Se probarán varios casos en que $a = 0$ y $b \leq 10^18$.
   \subtask{c}
-  Se probarán varios casos en que $a = 0$ y $b \leq 10^9$.
+  Se probarán varios casos en que $a < b \leq 10^5$.
   \subtask{d}
   Se probarán varios casos sin restricciones adicionales.
 \end{scoreDescription}

@@ -19,14 +19,12 @@
   participante ganador recibe un punto (1) mientras que el perdedor recibe cero puntos (0).
   Adicionalmente, los contrincantes pueden decidir terminar en \emph{tablas} en cuyo caso ambos
   contrincantes reciben medio punto (\nicefrac{1}{2}).
-  % Al final del torneo el participante con más puntos será el campeón.
-  Es posible
-  % , debido a la alta cantidad de partidas que comúnmente terminan en tablas,
-  que al final de un torneo varios participantes terminen con la misma cantidad de puntos.
-  Al final del torneo, todos los participantes que obtuvieron el puntaje máximo se coronarán
-  como campeón del torneo.
+  Dada estas reglas, es posible que al final de un torneo varios participantes terminen con
+  la misma cantidad de puntos.
+  Al final del torneo, todos los participantes que obtuvieron el puntaje máximo se consideran
+  \emph{campeones} del torneo.
 
-  Dada una lista con los resultados de cada partida, a la asociación
+  Dada una lista con los resultados de cada partida en un torneo, a la asociación
   mundial de ajedrez le gustaría determinar quienes son los campeones del torneo.
   ?`Podrías ayudarlos?
 \end{problemDescription}
@@ -42,16 +40,16 @@
   ($0\leq A < B < N$), describiendo el resultado de una partida.
   Los enteros $A$ y $B$ corresponden a los jugadores que se enfrentaron en esa partida.
   El entero $C$ indica el resultado de la partida.
-  Si la partida termino en tablas, $C$ será igual a {-1}.
+  Si la partida terminó en tablas, $C$ será igual a {-1}.
   En caso contrario, $C$ será igual a $A$, indicando que $A$ fue el ganador de la partida, o igual
   a $B$, indicando que $B$ fue el ganador de la partida.
   Se garantiza que un jugador no se enfrentará más de una vez al mismo contrincante.
 \end{inputDescription}
 
 \begin{outputDescription}
-  La salida debe contener la lista de participantes que se coronaron campeones.
+  La salida debe contener la lista los campeones del torneo.
   Específicamente, si la cantidad de campeones es $W$, la salida debe contener
-  en $W$ líneas cada una con un entero correspondiente a uno de los campeones.
+  $W$ líneas cada una con un entero correspondiente a uno de los campeones.
   La lista puede ser impresa en cualquier orden.
 \end{outputDescription}
 
@@ -62,18 +60,18 @@
 \end{scoreDescription}
 
 \begin{sampleDescription}
-\sampleIO[0.5][0.5]{sample-1}
+\sampleIO[0.5][0.46]{sample-1}
 \vspace{-1em}
 En este ejemplo todos los participantes jugaron dos partidas y en todas estas empataron, es decir,
-al final del torneo todos los jugadores terminaron con 1 punto y todos se coronaron como campeones.
+al final del torneo todos los jugadores terminaron con 1 punto y todos son campeones.
 La salida debe por lo tanto contener a todos los jugadores (en cualquier orden).
 \vspace{1em}
 
-\sampleIO[0.5][0.5]{sample-2}
+\sampleIO[0.5][0.46]{sample-2}
 \vspace{-1em}
 En este ejemplo el participante 0 ganó dos partidas para un total de 2 puntos, el 1 ganó una partida
 para un total de 1 punto y el 2 no ganó ninguna partida para un total de 0 puntos.
-Por lo tanto solo el participante 0 se coronó como campeón.
+Por lo tanto el participante 0 es el único campeón.
 \end{sampleDescription}
 \vspace{1em}
 

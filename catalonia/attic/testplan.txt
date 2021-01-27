@@ -1,72 +1,57 @@
-# This is a sample test plan.
-# Every line specifies a command to generate a test case.
-# The first column specifies a group name.
-# The second column specifies a command to generate the test case, it could be
-# either a `copy` command or a generator with its respective arguments.
-# A `copy` command expects a path to a file relatively to the task root.
-# A generator could be a source file in Java, C++ or Python, which is compiled
-# and executed with the specified arguments.
-# Additionally, an argument which is different for every test case, is passed
-# at the beginning. Arguments should be used to generate a uniquely random seed
-# inside the generator.
-# To generate test cases using test plan use `ocimatic input`
-
-
-[Subtask 1]
+[Subtask 1 - validators/st1.cpp]
   # Fixed a = 0, b <= 36
-  #1 ; GenSmallFixed0.py 0
-  #1 ; GenSmallFixed0.py 3
-  #1 ; GenSmallFixed0.py 4
-  #1 ; GenSmallFixed0.py 6
-  #1 ; GenSmallFixed0.py 11
-  #1 ; GenSmallFixed0.py 13
-  #1 ; GenSmallFixed0.py 17
-  #1 ; GenSmallFixed0.py 25
-  #1 ; GenSmallFixed0.py 31
-  #1 ; GenSmallFixed0.py 36
-    
+  1 ; echo 0 3
+  1 ; echo 0 4
+  1 ; echo 0 6
+  1 ; echo 0 11
+  1 ; echo 0 13
+  1 ; echo 0 17
+  1 ; echo 0 25
+  1 ; echo 0 28
+  1 ; echo 0 31
+  1 ; echo 0 36
 
-[Subtask 2]
+[Subtask 2 - validators/st2.cpp]
   # Fixed a = 0, b <= 10^18
-  #2 ; GenFixed0.py 1000000000000000000
-  #2 ; GenFixed0.py 1000000000000000000
-  #2 ; GenFixed0.py 1000000000000000000
-  #2 ; GenFixed0.py 1000000000000000000
-  #2 ; GenFixed0.py 1000000000000000000
-  #2 ; GenFixed0.py 1000000000000000000
-  #2 ; GenFixed0.py 1000000000000000000
-  #2 ; GenFixed0.py 1000000000000000000
-  #2 ; GenFixed0.py 1000000000000000000
-  #2 ; GenFixed0.py 1000000000000000000
-  #2 ; GenFixed0.py 1000000000000000000
-  #2 ; GenFixed0.py 1000000000000000000
+  2 ; GenFixed0.py 1000000000000000000
+  2 ; GenFixed0.py 1000000000000000000
+  2 ; GenFixed0.py 1000000000000000000
+  2 ; GenFixed0.py 1000000000000000000
+  2 ; GenFixed0.py 1000000000000000000
+  2 ; GenFixed0.py 1000000000000000000
+  2 ; GenFixed0.py 1000000000000000000
+  2 ; GenFixed0.py 1000000000000000000
+  2 ; GenFixed0.py 1000000000000000000
+  2 ; GenFixed0.py 1000000000000000000
+  2 ; GenFixed0.py 1000000000000000000
+  2 ; GenFixed0.py 1000000000000000000
 
-[Subtask 3]
+[Subtask 3 - validators/st3.cpp]
   # Random a,b <= 10^5
-  #3 ; GenRandom.py 100000
-  #3 ; GenRandom.py 100000
-  #3 ; GenRandom.py 100000
-  #3 ; GenRandom.py 100000
-  #3 ; GenRandom.py 100000
-  #3 ; GenRandom.py 100000
-  #3 ; GenRandom.py 100000
-  #3 ; GenRandom.py 100000
-  #3 ; GenRandom.py 100000
-  #3 ; GenRandom.py 100000
-  #3 ; GenRandom.py 100000
-  #3 ; GenRandom.py 100000
+  3 ; GenRandom.py 100000
+  3 ; GenRandom.py 100000
+  3 ; GenRandom.py 100000
+  3 ; GenRandom.py 100000
+  3 ; GenRandom.py 100000
+  3 ; GenRandom.py 100000
+  3 ; GenRandom.py 100000
+  3 ; GenRandom.py 100000
+  3 ; GenRandom.py 100000
+  3 ; GenRandom.py 100000
+  3 ; GenRandom.py 100000
+  3 ; GenRandom.py 100000
 
-[Subtask 3]
-  # Random a,b <= 10^5
-  #4 ; GenRandom.py 1000000000000000000
-  #4 ; GenRandom.py 1000000000000000000
-  #4 ; GenRandom.py 1000000000000000000
-  #4 ; GenRandom.py 1000000000000000000
-  #4 ; GenRandom.py 1000000000000000000
-  #4 ; GenRandom.py 1000000000000000000
-  #4 ; GenRandom.py 1000000000000000000
-  #4 ; GenRandom.py 1000000000000000000
-  #4 ; GenRandom.py 1000000000000000000
-  #4 ; GenRandom.py 1000000000000000000
-  #4 ; GenRandom.py 1000000000000000000
-  #4 ; GenRandom.py 1000000000000000000
+[Subtask 4 - validators/st4.cpp]
+  # Random a,b <= 10^18
+  4 ; GenRandom.py 1000000000000000000
+  4 ; GenRandom.py 1000000000000000000
+  4 ; GenRandom.py 1000000000000000000
+  4 ; GenRandom.py 1000000000000000000
+  4 ; GenRandom.py 1000000000000000000
+  4 ; GenRandom.py 1000000000000000000
+  4 ; GenRandom.py 1000000000000000000
+  4 ; GenRandom.py 1000000000000000000
+  4 ; GenRandom.py 1000000000000000000
+  4 ; GenRandom.py 1000000000000000000
+  4 ; GenRandom.py 1000000000000000000
+  4 ; GenRandom.py 1000000000000000000
