@@ -19,7 +19,7 @@ pair<vector<int>, vector<int>> compute_min_max_arrs(const vector<int> &arr,
   maxs[0] = *elements.rbegin();
 
   for (int i = 1; i + w - 1 < arr.size(); ++i) {
-    elements.erase(arr[i - 1]);
+    elements.erase(elements.find(arr[i - 1]));
     elements.insert(arr[i + w - 1]);
     mins[i] = *elements.begin();
     maxs[i] = *elements.rbegin();
@@ -57,9 +57,9 @@ int main() {
     }
     best = min(best, *elements_max.rbegin() - *elements_min.begin());
     for (int i = 1; i + M - 1 < H; ++i) {
-      elements_min.erase(mins_for_row[i - 1][j]);
+      elements_min.erase(elements_min.find(mins_for_row[i - 1][j]));
       elements_min.insert(mins_for_row[i + M - 1][j]);
-      elements_max.erase(maxs_for_row[i - 1][j]);
+      elements_max.erase(elements_max.find(maxs_for_row[i - 1][j]));
       elements_max.insert(maxs_for_row[i + M - 1][j]);
 
       best = min(best, *elements_max.rbegin() - *elements_min.begin());
