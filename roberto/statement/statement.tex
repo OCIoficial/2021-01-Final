@@ -17,7 +17,7 @@
   El plano describe el terreno como una matriz de enteros de tamaño $H\times W$
   ($H$ filas y $W$ columnas).
   Cada elemento en la matriz representa la altura del terreno en esa posición.
-  El nuevo edificio debe construirse en el terreno sobre una submatriz de tamaño $M\times N$.
+  El nuevo edificio debe construirse sobre una submatriz de tamaño $M\times N$.
   Antes de construirlo, Roberto tiene que nivelar la submatriz sobre la cual se construirá.
   El costo de nivelación de una submatriz es igual a la diferencia entre las alturas de la celda
   más alta y la más baja en la submatriz.
@@ -69,7 +69,7 @@
   Estos enteros corresponden respectivamente al alto y ancho de la matriz describiendo el terreno,
   y al alto y ancho de la submatriz donde se debe construir el edificio.
   Las siguientes $H$ líneas describen la matriz que representa el terreno.
-  Cada línea contiene $W$ enteros.
+  Cada línea contiene $W$ enteros entre 0 y 1000.
   El $j$-ésimo entero en la línea $i$-ésima corresponde al entero en la fila $i$-ésima y
   columna $j$-ésima de la matriz.
 \end{inputDescription}
@@ -84,11 +84,9 @@
   \subtask{10}
   Se probarán varios casos en que $H=W=M=N$.
   \subtask{15}
-  Se probarán varios casos en que $M=N$ y $M\leq 5$, es decir, el edificio debe construirse en una
-  submatriz cuadrada de tamaño menor o igual que 5.
+  Se probarán varios casos en que $M=N$ y $M\leq 5$.
   \subtask{30}
-  Se probarán varios casos en que $H=1$ y $M=1$, es decir,
-  el terreno está descrito por un arreglo.
+  Se probarán varios casos en que $H=1$ y $M=1$.
   \subtask{45}
   Se probarán varios casos sin restricciones adicionales.
 \end{scoreDescription}
@@ -96,6 +94,7 @@
 \begin{sampleDescription}
 \sampleIO{sample-1}
 \sampleIO{sample-2}
+\sampleIO{sample-3}
 \end{sampleDescription}
 
 \end{document}
