@@ -2,21 +2,16 @@
 
 using namespace std;
 
-
 int main() {
-    registerValidation();
+  registerValidation();
 
-    int unread = inf.readInt(50, 1000, "LENGTH");
-    inf.readEoln();
+  int N = inf.readInt(50, 1000, "LENGTH");
+  inf.readEoln();
 
-    while (unread > 0) {
-        string word = inf.readToken("[A-Z]+");
-        unread -= word.length();
-        if (unread > 1) {
-            inf.readSpace();
-            unread--;
-        }
-    }
-    inf.readEoln();
-    inf.readEof();
+  for (int i = 0; i < N; ++i) {
+    char c = inf.readChar();
+    ensuref(c == ' ' || ('A' <= c && c <= 'Z'), "Invalid caracter");
+  }
+  inf.readEoln();
+  inf.readEof();
 }
