@@ -7,7 +7,7 @@ from typing import Counter, Iterable, Tuple
 def unaccent(c: str) -> str:
     assert(c.isalpha() and len(c) == 1 and c.isupper())
     map = {'Á': 'A', 'É': 'E', 'Í': 'I', 'Ó': 'O', 'Ú': 'U',
-           'Ä': 'A', 'Ë': 'E', 'Ï': 'I', 'Ü': 'U', 'Ù': 'U', 'À': 'A'}
+           'Ä': 'A', 'Ë': 'E', 'Ï': 'I', 'Ü': 'U', 'Ù': 'U', 'À': 'A', 'Ñ': 'N'}
     c = map.get(c, c)
     if not (ord('A') <= ord(c) <= ord('Z') or c == 'Ñ'):
         print(f'Unexpected alpha character >{c}<', file=sys.stderr)
@@ -45,7 +45,7 @@ def normalize_lines(lines: Iterable[str]) -> str:
         if len(line) == 0:
             continue
         normalized.append(normalize_line(line))
-    return '\n'.join(normalized)
+    return normalized
 
 
 def normalize_file(filename: str) -> str:
@@ -57,7 +57,7 @@ def stats_for_file(filename: str) -> Tuple[Counter[str], int]:
     with open(filename, "r") as f:
         total = 0
         counter = Counter()
-        for line in f:
+        for line in normalize_lines(f):
             letters = [c for c in line if c.isalpha()]
             counter.update(letters)
             total += len(letters)
@@ -67,21 +67,13 @@ def stats_for_file(filename: str) -> Tuple[Counter[str], int]:
 def print_stats(stats: Tuple[Counter[str], int]):
     (counter, total) = stats
     print(f"Total: {total}")
-    for (k, c) in counter.most_common():
-        print(f"{k}\t{c/total*100:10.4f}%\t{c}")
+    for (k, c) in sorted(counter.items()):
+        print(f"{k}\t{c/total:10.4f}\t{c}")
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(prog="quijote")
-    subparsers = parser.add_subparsers(dest='command')
-    normalize_parser = subparsers.add_parser('normalize')
-    normalize_parser.add_argument('filename')
-
-    stats_parsers = subparsers.add_parser('stats')
-    stats_parsers.add_argument('filename')
-
+    parser = argparse.ArgumentParser(prog="stats")
+    parser.add_argument("filename")
     args = parser.parse_args()
-    if args.command == "stats":
-        print_stats(stats_for_file(args.filename))
-    elif args.command == "normalize":
-        print(normalize_file(args.filename))
+
+    print_stats(stats_for_file(args.filename))
