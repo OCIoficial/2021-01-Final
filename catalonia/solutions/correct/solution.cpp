@@ -5,7 +5,7 @@ typedef long long ll;
 typedef pair<ll, ll> pll;
 
 pll convert(ll i) {
-	ll k, l = 0, r = 1e5;
+	ll k, l = 0, r = 1e9;
 
 	while(l != r) {
 		ll m = (l+r)/2;
