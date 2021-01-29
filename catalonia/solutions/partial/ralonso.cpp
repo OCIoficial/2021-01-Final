@@ -43,13 +43,7 @@ int dist(pair<int, int> s, pair<int, int> t) {
     int dx = get<0>(t) - get<0>(s);
     int dy = get<1>(t) - get<1>(s);
     int dz = dx - dy;
-    return min(
-        min(
-            (long long)abs(dx) + abs(dy), 
-            (long long)abs(dy) + abs(dz)
-        ),
-        (long long)abs(dz) + abs(dx)
-    );
+    return min(min(abs(dx) + abs(dy), abs(dy) + abs(dz)), abs(dz) + abs(dx));
 }
 
 int main() {

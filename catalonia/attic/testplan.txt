@@ -25,6 +25,10 @@
   2 ; GenFixed0.py 1000000000000000000
   2 ; GenFixed0.py 1000000000000000000
   2 ; GenFixed0.py 1000000000000000000
+  precision577350268 ; echo 0 999999997611066276
+  precision577350268 ; echo 0 999999997611066275
+  precision577350267 ; echo 0 999999994146964668
+  precision577350267 ; echo 0 999999994146964667
 
 [Subtask 3 - validators/st3.cpp]
   # Random a,b <= 10^5
@@ -40,6 +44,11 @@
   3 ; GenRandom.py 100000
   3 ; GenRandom.py 100000
   3 ; GenRandom.py 100000
+  opposite56 ; echo 9576 9744
+  precision57 ; echo 0 9918
+  precision57 ; echo 0 9917
+  precision54 ; echo 0 8910
+  precision54 ; echo 0 8909
 
 [Subtask 4 - validators/st4.cpp]
   # Random a,b <= 10^18
@@ -55,3 +64,8 @@
   4 ; GenRandom.py 1000000000000000000
   4 ; GenRandom.py 1000000000000000000
   4 ; GenRandom.py 1000000000000000000
+  opposite577350268 ; echo 999999997611066276 999999999343117080
+  precision577350268 ; echo 0 999999997611066276
+  precision577350268 ; echo 0 999999997611066275
+  precision577350265 ; echo 0 999999987218761470
+  precision577350265 ; echo 0 999999987218761469
