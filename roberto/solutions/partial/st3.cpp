@@ -1,4 +1,5 @@
 #include<cstdio>
+#include<climits>
 #include<vector>
 #include<set>
 #include<algorithm>
@@ -7,7 +8,7 @@ using namespace std;
 
 int get_min_cost(vector<vector<int>> grid, int h, int w, int m, int n) {
     multiset<int> window;
-    int min_cost = 1000;
+    int min_cost = INT_MAX;
 
     for (int i = 0; i < h - m + 1; i++) {
         for (int di = 0; di < m; di++) {

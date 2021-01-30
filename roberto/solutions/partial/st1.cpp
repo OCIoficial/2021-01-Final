@@ -1,11 +1,12 @@
 #include<cstdio>
+#include<climits>
 #include<algorithm>
 
 using namespace std;
 
 int main() {
     int h, w, z;
-    int minz = 1000, maxz = 0;
+    int minz = INT_MAX, maxz = 0;
 
     scanf("%d%d%d%d", &h, &w, &z, &z);
 

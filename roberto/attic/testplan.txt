@@ -1,57 +1,58 @@
 [Subtask 1]
-  random ; gen_random.py 3 3 3 3 1 0 0
-  random ; gen_random.py 5 5 5 5 1 0 0
-  random ; gen_random.py 50 50 50 50 2 20 0
-  random ; gen_random.py 100 100 100 100 2 30 0
-  random ; gen_random.py 1000 1000 1000 1000 2 400 100
-  random ; gen_random.py 1000 1000 1000 1000 2 700 50
-  random ; gen_random.py 1000 1000 1000 1000 2 100 10
-  random ; gen_random.py 1000 1000 1000 1000 2 900 50
-  random ; gen_random.py 1000 1000 1000 1000 1 0 0
-  random ; gen_random.py 500 500 500 500 2 300 100
-  random ; gen_random.py 500 500 500 500 2 800 100
-  random ; gen_random.py 500 500 500 500 1 0 0
+  #                      H W M N MIN MAX
+  random ; gen_random.py 3 3 3 3 0 1000000
+  random ; gen_random.py 5 5 5 5 0 1000000
+  random ; gen_random.py 50 50 50 50 20000 20000
+  random ; gen_random.py 100 100 100 100 30000 30000
+  random ; gen_random.py 1000 1000 1000 1000 300000 500000
+  random ; gen_random.py 1000 1000 1000 1000 650000 750000
+  random ; gen_random.py 1000 1000 1000 1000 90000 110000
+  random ; gen_random.py 1000 1000 1000 1000 850000 950000
+  random ; gen_random.py 1000 1000 1000 1000 0 1000000
+  random ; gen_random.py 500 500 500 500 200000 400000
+  random ; gen_random.py 500 500 500 500 700000 900000
+  random ; gen_random.py 500 500 500 500 0 1000000
 
 [Subtask 2]
-  random ; gen_random.py 1000 500 3 3 1 0 0
-  random ; gen_random.py 1000 500 3 3 2 500 0
-  random ; gen_random.py 1000 500 3 3 2 700 100
-  random ; gen_random.py 1000 500 3 3 2 100 5
-  random ; gen_random.py 500 1000 3 3 1 0 0
-  random ; gen_random.py 500 1000 3 3 2 900 15
-  random ; gen_random.py 500 1000 3 3 2 600 0
-  random ; gen_random.py 1000 1000 5 5 1 0 0
-  random ; gen_random.py 1000 1000 1 1 1 0 0
-  random ; gen_random.py 700 900 4 4 2 400 60
+  random ; gen_random.py 1000 500 3 3 0 1000000
+  random ; gen_random.py 1000 500 3 3 500000 500000
+  random ; gen_random.py 1000 500 3 3 600000 800000
+  random ; gen_random.py 1000 500 3 3 95000 105000
+  random ; gen_random.py 500 1000 3 3 0 1000000
+  random ; gen_random.py 500 1000 3 3 885000 915000
+  random ; gen_random.py 500 1000 3 3 600000 600000
+  random ; gen_random.py 1000 1000 5 5 0 1000000
+  random ; gen_random.py 1000 1000 1 1 0 1000000
+  random ; gen_random.py 700 900 4 4 340000 460000
 
 [Subtask 3]
-  random ; gen_random.py 1 1000000 1 50 1 0 0
-  random ; gen_random.py 1 1000000 1 500 2 300 100
-  random ; gen_random.py 1 1000000 1 50 2 700 50
-  random ; gen_random.py 1 1000000 1 50 2 100 10
-  random ; gen_random.py 1 1000000 1 800000 2 900 30
-  random ; gen_random.py 1 500000 1 400 1 0 0
-  random ; gen_random.py 1 500000 1 400 2 500 200
-  random ; gen_random.py 1 500000 1 400 2 300 123
-  random ; gen_random.py 1 500000 1 500 2 800 150
-  big-window ; gen_random.py 1 1000000 1 500000 1 0 0
-  big-window ; gen_random.py 1 700000 1 500000 2 90 0
+  random ; gen_random.py 1 1000000 1 50 0 1000000
+  random ; gen_random.py 1 1000000 1 500 200000 400000
+  random ; gen_random.py 1 1000000 1 50 650000 750000
+  random ; gen_random.py 1 1000000 1 50 90000 110000
+  random ; gen_random.py 1 1000000 1 800000 870000 930000
+  random ; gen_random.py 1 500000 1 400 0 1000000
+  random ; gen_random.py 1 500000 1 400 300000 700000
+  random ; gen_random.py 1 500000 1 400 177000 423000
+  random ; gen_random.py 1 500000 1 500 650000 950000
+  big-window ; gen_random.py 1 1000000 1 500000 0 1000000
+  big-window ; gen_random.py 1 700000 1 500000 90000 90000
 
 [Subtask 4]
-  random ; gen_random.py 1000 1000 800 800 1 0 0
-  random ; gen_random.py 1000 1000 800 800 2 300 0
-  random ; gen_random.py 1000 1000 800 800 2 800 100
-  random ; gen_random.py 1000 1000 800 800 2 500 0
-  random ; gen_random.py 1000 1000 800 800 2 700 20
-  random ; gen_random.py 1000 1000 800 800 2 250 50
-  random ; gen_random.py 1000 1000 800 800 2 130 0
-  random ; gen_random.py 1000 999 900 900 1 0 0
-  random ; gen_random.py 1000 999 900 900 2 450 0
-  random ; gen_random.py 1000 999 900 900 2 300 75
-  random ; gen_random.py 1000 999 900 900 2 930 15
-  random ; gen_random.py 990 1000 400 10 2 300 10
-  random ; gen_random.py 990 1000 400 10 2 200 150
-  random ; gen_random.py 990 1000 400 10 2 700 50
-  random ; gen_random.py 1000 1000 5 900 1 0 0
-  random ; gen_random.py 1000 1000 900 100 2 7 3
-  random ; gen_random.py 1000 1000 500 500 2 400 300
+  random ; gen_random.py 1000 1000 800 800 0 1000000
+  random ; gen_random.py 1000 1000 800 800 300000 300000
+  random ; gen_random.py 1000 1000 800 800 700000 900000
+  random ; gen_random.py 1000 1000 800 800 500000 500000
+  random ; gen_random.py 1000 1000 800 800 680000 720000
+  random ; gen_random.py 1000 1000 800 800 200000 300000
+  random ; gen_random.py 1000 1000 800 800 130000 130000
+  random ; gen_random.py 1000 999 900 900 0 1000000
+  random ; gen_random.py 1000 999 900 900 450000 450000
+  random ; gen_random.py 1000 999 900 900 225000 375000
+  random ; gen_random.py 1000 999 900 900 915000 945000
+  random ; gen_random.py 990 1000 400 10 290000 310000
+  random ; gen_random.py 990 1000 400 10 50000 350000
+  random ; gen_random.py 990 1000 400 10 650000 750000
+  random ; gen_random.py 1000 1000 5 900 0 1000000
+  random ; gen_random.py 1000 1000 900 100 4000 10000
+  random ; gen_random.py 1000 1000 500 500 100000 700000

@@ -1,4 +1,5 @@
 #include<cstdio>
+#include<climits>
 #include<vector>
 #include<set>
 #include<algorithm>
@@ -9,7 +10,7 @@ int get_min_cost(vector<vector<int>> grid, int h, int w, int m, int n) {
     vector<vector<int>> min_col_z(h - m + 1, vector<int>(w));
     vector<vector<int>> max_col_z(h - m + 1, vector<int>(w));
     multiset<int> min_window, max_window;
-    int min_cost = 1000;
+    int min_cost = INT_MAX;
 
     for (int j = 0; j < w; j++) {
         // Fill window with subgrid (0, j) -> (m, j + 1)
