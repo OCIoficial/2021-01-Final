@@ -9,23 +9,23 @@
 \begin{problemDescription}
   Debido al éxito de la miniserie original de Netflix, Gambito de Dama, el ajedrez
   se está volviendo cada vez más popular.
-  Decenas de nuevos torneos se organizan cada mes y la cantidad sigue en aumento.
-  Dado este explosivo aumento, la asociación mundial de ajedrez se está comenzando a preocupar
+  Decenas de nuevos torneos se organizan cada mes y la cantidad sigue en alza.
+  Dado este explosivo aumento, la Asociación Mundial de Ajedrez se está comenzando a preocupar
   de la fiabilidad en los resultados de todos estos nuevos torneos.
 
-  En un torneo de ajedrez cada participante debe enfrentarse a diferentes contrincantes y en cada
+  En un torneo de ajedrez, cada participante debe enfrentarse a diferentes contrincantes y en cada
   partida recibirá puntaje dependiendo del resultado.
-  Una partida puede terminar con uno de los dos contrincantes victorioso en cuyo caso el
+  Una partida puede terminar con uno de los dos contrincantes victorioso, en cuyo caso el
   participante ganador recibe un punto (1) mientras que el perdedor recibe cero puntos (0).
-  Adicionalmente, los contrincantes pueden decidir terminar en \emph{tablas} en cuyo caso ambos
+  Adicionalmente, los contrincantes pueden decidir terminar en \emph{tablas}, en cuyo caso ambos
   contrincantes reciben medio punto (\nicefrac{1}{2}).
-  Dada estas reglas, es posible que al final de un torneo varios participantes terminen con
+  Dadas estas reglas, es posible que al final de un torneo varios participantes terminen con
   la misma cantidad de puntos.
   Se considera como \emph{campeones} a todos los participantes que obtienen el puntaje máximo
   al final de un torneo.
 
-  Dada una lista con los resultados de cada partida en un torneo, a la asociación
-  mundial de ajedrez le gustaría determinar quienes son los campeones del torneo.
+  Dada una lista con los resultados de cada partida en un torneo, a la Asociación
+  Mundial de Ajedrez le gustaría determinar quiénes son los campeones del torneo.
   ?`Podrías ayudarlos?
 \end{problemDescription}
 
@@ -47,29 +47,29 @@
 \end{inputDescription}
 
 \begin{outputDescription}
-  La salida debe contener la lista los campeones del torneo.
+  La salida debe contener la lista de los campeones del torneo.
   Específicamente, si la cantidad de campeones es $W$, la salida debe contener
-  $W$ líneas cada una con un entero correspondiente a uno de los campeones.
+  $W$ líneas, cada una con un entero correspondiente a uno de los campeones.
   La lista puede ser impresa en cualquier orden.
 \end{outputDescription}
 
 \begin{scoreDescription}
   Este problema no contiene subtareas.
-  Se probarán varios casos y se entregará puntaje proporcional a la cantidad de casos correctos
+  Se probará varios casos y se entregará puntaje proporcional a la cantidad de casos correctos,
   siendo 100 el puntaje máximo.
 \end{scoreDescription}
 
 \begin{sampleDescription}
 \sampleIO[0.5][0.46]{sample-1}
 \vspace{-1em}
-En este ejemplo todos los participantes jugaron dos partidas y en todas estas empataron, es decir,
+En este ejemplo, todos los participantes jugaron dos partidas y en todas estas empataron, es decir,
 al final del torneo todos los jugadores terminaron con 1 punto y todos son campeones.
 La salida debe por lo tanto contener a todos los jugadores (en cualquier orden).
 \vspace{1em}
 
 \sampleIO[0.5][0.46]{sample-2}
 \vspace{-1em}
-En este ejemplo el participante 0 ganó dos partidas para un total de 2 puntos, el 1 ganó una partida
+En este ejemplo, el participante 0 ganó dos partidas para un total de 2 puntos, el 1 ganó una partida
 para un total de 1 punto y el 2 no ganó ninguna partida para un total de 0 puntos.
 Por lo tanto el participante 0 es el único campeón.
 \end{sampleDescription}
