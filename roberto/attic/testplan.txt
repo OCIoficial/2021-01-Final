@@ -1,4 +1,4 @@
-[Subtask 1]
+[Subtask 1 - validators/st1.cpp]
   #                      H W M N MIN MAX
   random ; gen_random.py 3 3 3 3 0 1000000
   random ; gen_random.py 5 5 5 5 0 1000000
@@ -13,7 +13,7 @@
   random ; gen_random.py 500 500 500 500 700000 900000
   random ; gen_random.py 500 500 500 500 0 1000000
 
-[Subtask 2]
+[Subtask 2 - validators/st2.cpp]
   random ; gen_random.py 1000 500 3 3 0 1000000
   random ; gen_random.py 1000 500 3 3 500000 500000
   random ; gen_random.py 1000 500 3 3 600000 800000
@@ -25,7 +25,7 @@
   random ; gen_random.py 1000 1000 1 1 0 1000000
   random ; gen_random.py 700 900 4 4 340000 460000
 
-[Subtask 3]
+[Subtask 3 - validators/st3.cpp]
   random ; gen_random.py 1 1000000 1 50 0 1000000
   random ; gen_random.py 1 1000000 1 500 200000 400000
   random ; gen_random.py 1 1000000 1 50 650000 750000
@@ -38,7 +38,7 @@
   big-window ; gen_random.py 1 1000000 1 500000 0 1000000
   big-window ; gen_random.py 1 700000 1 500000 90000 90000
 
-[Subtask 4]
+[Subtask 4 - validators/st4.cpp]
   random ; gen_random.py 1000 1000 800 800 0 1000000
   random ; gen_random.py 1000 1000 800 800 300000 300000
   random ; gen_random.py 1000 1000 800 800 700000 900000
