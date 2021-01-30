@@ -27,9 +27,9 @@ Posteriormente, cada letra del mensaje es reemplazada por la letra del abecedari
 encuentra $k$ posiciones más adelante.
 En caso de llegar al final del abecedario se debe continuar contando desde la $A$.
 Específicamente, si enumeramos las letras del abecedario entre 0 y 25, la letra $i$ debe ser
-reemplazada por la letra $(i+k)\% 26$.
+reemplazada por la letra $(i+k)\% 26$, donde $\%$ corresponde a la operación módulo.
 
-Como ejemplo considera el siguiente mensaje
+Como ejemplo, considera el siguiente mensaje:
 \begin{center}
   \texttt{SE ATREVIO O SE HA DE ATREVER A ESCRIBIR CON PLUMA DE AVESTRUZ}
 \end{center}
@@ -48,12 +48,12 @@ está confiado que nadie los podrá descifrar.
 Dado un mensaje encriptado con el método de César, tu tarea es determinar la llave que fue
 utilizada para encriptarlo.
 Tu solución será probada con distintos mensajes y obtendrás puntaje proporcional a la cantidad
-de casos correctos siendo 100 el puntaje máximo.
-Todos los mensajes corresponderán a fragmentos del libro \emph{Don Quijote de la Macha} donde
-cada letra ha sido transformada a mayúscula y a los cuales se les han eliminado los tildes
+de casos correctos, siendo 100 el puntaje máximo.
+Todos los mensajes corresponderán a fragmentos del libro \emph{Don Quijote de la Macha}, donde
+cada letra ha sido transformada a mayúscula y se han eliminado los tildes
 y signos de puntuación.
 
-Para resolver este problema pueden serte útiles las siguientes estadísticas sobre el libro.
+Para resolver este problema, pueden serte útiles las siguientes estadísticas sobre el libro:
 El Quijote está compuesto de un total de 1\,603\,700 caracteres (sin considerar espacios) y
 naturalmente algunas letras aparecen más que otras.
 Por ejemplo, la \verb|E| es la letra que más aparece con un total de 223\,996 ocurrencias y una
@@ -87,7 +87,7 @@ I & 0.0547 & S & 0.0767 &\rule[-0.9ex]{0pt}{0pt}\\
     (incluyendo espacios).
     La segunda línea contiene una cadena de texto conteniendo solo espacios y letras mayúsculas
     del alfabeto inglés.
-    La cadena de texto corresponderá siempre a un mensaje extraído de el Quijote que fue encriptado
+    La cadena de texto corresponderá siempre a un mensaje extraído de El Quijote que fue encriptado
     utilizando el método descrito en el enunciado.
 \end{inputDescription}
 
